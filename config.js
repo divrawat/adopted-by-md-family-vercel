@@ -1,6 +1,6 @@
 
 // export const DOMAIN = 'http://localhost:3000';
-export const DOMAIN = 'https://www.adoptedbyamurderousdukefamily.in.net';
+export const DOMAIN = 'https://adoptedbymurderousdukefamily.vercel.app';
 
 export const MANGA_DESCRIPTION = `<a href="${DOMAIN}"><u>Adopted by a Murderous Duke Family</u></a> is a novel that revolves around a young woman named Agnes finds herself back in time after being exploited for her healing powers by a cruel duke. This time, she's offered adoption by Duke Rodwick, the head of a notorious family of assassins. Despite their dark reputation, Agnes accepts, hoping for a better life. However, her new family's work and her secret power put her in a precarious situation. `;
 
