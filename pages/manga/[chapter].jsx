@@ -97,6 +97,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
             {head()}
             <Navbar />
             <article>
+                <AdSense />
                 <h1 className="text-3xl font-bold text-center p-5 md:my-5">{`${MANGA_NAME} Chapter ${chapterNumber}`}</h1>
                 <p className='text-center px-4'>{`You are reading ${MANGA_NAME} Chapter ${chapterNumber}`}</p>
 
@@ -125,7 +126,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     </div>
                 </div>
 
-                {/* <AdSense /> */}
+                <AdSense />
 
                 <div className='max-w-[1200px] mx-auto mb-5'>
                     {imageUrls.map((imageUrl, index) => (
@@ -138,7 +139,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
 
 
 
-                {/* <div className="max-w-[1200px] mx-auto mb-5">
+                <div className="max-w-[1200px] mx-auto mb-5">
                     {imageUrls.map((imageUrl, index) => (
                         <React.Fragment key={index}>
                             <div className="allimages">
@@ -155,7 +156,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                             )}
                         </React.Fragment>
                     ))}
-                </div> */}
+                </div>
 
 
 
@@ -168,12 +169,12 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
 
 
 
-                {/* <div className='py-10 bg-[#0f0511]'>
+                <div className='py-10 bg-[#0f0511]'>
                     <h2 className='text-4xl text-center text-[white] font-blod px-4 mb-10'>Comment Section</h2>
                     <section className='max-w-[1000px] mx-auto px-5'>
                         <DisqusComments url={`/manga/${URL}`} identifier={chapterNumber} title={`${MANGA_NAME} Chapter ${chapterNumber}`} />
                     </section>
-                </div> */}
+                </div>
             </article>
 
             <Footer />
@@ -203,7 +204,15 @@ export async function getStaticProps({ params }) {
     const numImages = chapterData.numImages;
     const imageUrls = getImageUrls(chapterNumber, numImages);
 
-    return { props: { chapterNumber, imageUrls, totalChapters, params, chapterIndex } };
+
+    return {
+        redirect: {
+            destination: `https://www.adoptedbyamurderousdukefamily.in.net/manga/adopted-by-a-murderous-duke-family-chapter-${chapterNumber}`,
+            permanent: false,
+        },
+    };
+
+    // return { props: { chapterNumber, imageUrls, totalChapters, params, chapterIndex } };
 }
 
 
